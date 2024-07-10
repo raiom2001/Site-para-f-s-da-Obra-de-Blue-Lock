@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #080808;
+    color: #ccc;
+}
+
+header {
+    background-color: #14006b;
+    color: #fdfcfc;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 100px;
+    border-bottom:currentColor #ccc;
+    border: 1px groove #ccc; /* borda de 1px, cor #ccc */
+    border-radius: 10px; /* arredondar as bordas */
+    padding: 10px; /* adicionar espaçamento interno */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #ccc;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px; /* adicionar margem inferior ao título principal */
+    font-family: "Anton SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.character {
+    border: 8px groove #ccc; /* borda de 1px, cor #ccc */
+    padding: 20px; /* adicionar espaçamento interno */
+    margin-bottom: 20px; /* adicionar espaçamento entre os trechos */
+    display: flex;
+    align-items: flex-start; /* ajustar o alinhamento dos itens */
+    margin-right: 10px;
+    margin-left: 10px;
+
+    font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
+
+.character img {
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 10px; /* arredondar as bordas das imagens */
+}
+
+.character h2 {
+    margin-top: 0; /* remover a margem superior do título do personagem */
+    margin-bottom: 20px; /* adicionar margem inferior ao título do personagem */
+
+    font-family: "Anton SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.character p {
+    margin-top: 10px; /* adicionar margem superior ao parágrafo */
+    margin-left: 50px;
+}
+
+.character h2 {
+margin-right: auto;
+margin-bottom: 60px;}
+
+
+footer {
+    background-color: #01012e; /* Cor de fundo do rodapé */
+    color: #fffb00; /* Cor de texto do rodapé */
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 2px solid #121212; /* Cor da borda superior */
+}

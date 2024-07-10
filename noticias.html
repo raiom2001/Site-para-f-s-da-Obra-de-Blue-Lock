@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notícias sobre Blue Lock</title>
+  <link rel="stylesheet" href="noticias.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://ih1.redbubble.net/image.4376314007.9246/st,small,507x507-pad,600x600,f8f8f8.jpg" type="image/x-icon" />
+
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="manga.html">Mangá</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="personagens.html">Personagens</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <h1>Notícias sobre Blue Lock</h1>
+  <div id="noticias"></div>
+  <footer>
+    &copy; Dev Guilherme Macena 2024
+  </footer>
+
+  <script>
+    async function fetchNoticias() {
+      try {
+        const response = await fetch('http://localhost:4000/noticias');
+        if (!response.ok) {
+          throw new Error('Erro na requisição: ' + response.statusText);
+        }
+        const noticias = await response.json();
+        const noticiasContainer = document.getElementById('noticias');
+        noticiasContainer.innerHTML = ''; // Limpa os resultados anteriores
+
+        noticias.forEach(noticia => {
+          const noticiaElement = document.createElement('div');
+          noticiaElement.classList.add('noticia'); // Adiciona a classe 'noticia' para aplicar estilos CSS
+          noticiaElement.innerHTML = `<h2>${noticia.title}</h2><p>${noticia.contentSnippet}</p><a href="${noticia.link}" target="_blank">Leia mais</a>`;
+          noticiasContainer.appendChild(noticiaElement);
+        });
+      } catch (error) {
+        console.error('Erro ao buscar notícias:', error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchNoticias);
+  
+  </script>
+</body>
+</html>
