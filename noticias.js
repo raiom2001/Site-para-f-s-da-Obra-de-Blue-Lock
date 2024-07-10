@@ -28,7 +28,8 @@ app.get('/noticias', async (req, res) => {
   }
 });
 
-// Não especifique a porta manualmente
-app.listen(() => {
-  console.log(`Servidor ouvindo na porta ${process.env.PORT || 4000}`);
+// Porta configurada automaticamente pelo ambiente do Vercel
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Servidor ouvindo na porta ${port}`);
 });
