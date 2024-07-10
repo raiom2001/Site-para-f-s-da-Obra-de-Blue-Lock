@@ -31,7 +31,7 @@
   <script>
    async function fetchNoticias() {
   try {
-    const response = await fetch('https://organizadalock.vercel.app/noticias.html'); // Atualize para o URL do seu projeto Vercel
+    const response = await fetch('https://organizadalock.vercel.app/noticias');
     if (!response.ok) {
       throw new Error('Erro na requisição: ' + response.statusText);
     }
