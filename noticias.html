@@ -6,14 +6,9 @@
   <title>Notícias sobre Blue Lock</title>
   <link rel="stylesheet" href="noticias.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="https://ih1.redbubble.net/image.4376314007.9246/st,small,507x507-pad,600x600,f8f8f8.jpg" type="image/x-icon" />
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="https://ih1.redbubble.net/image.4376314007.9246/st,small,507x507-pad,600x600,f8f8f8.jpg" type="image/x-icon" />
 </head>
 <body>
   <header>
@@ -36,7 +31,7 @@
   <script>
     async function fetchNoticias() {
       try {
-        const response = await fetch('http://localhost:4000/noticias');
+        const response = await fetch('/noticias'); // Rota ajustada para ser relativa
         if (!response.ok) {
           throw new Error('Erro na requisição: ' + response.statusText);
         }
@@ -46,17 +41,23 @@
 
         noticias.forEach(noticia => {
           const noticiaElement = document.createElement('div');
-          noticiaElement.classList.add('noticia'); // Adiciona a classe 'noticia' para aplicar estilos CSS
-          noticiaElement.innerHTML = `<h2>${noticia.title}</h2><p>${noticia.contentSnippet}</p><a href="${noticia.link}" target="_blank">Leia mais</a>`;
+          noticiaElement.classList.add('noticia'); // Classe CSS para estilização
+          noticiaElement.innerHTML = `
+            <h2>${noticia.title}</h2>
+            <p>${noticia.contentSnippet}</p>
+            <a href="${noticia.link}" target="_blank">Leia mais</a>
+          `;
           noticiasContainer.appendChild(noticiaElement);
         });
       } catch (error) {
         console.error('Erro ao buscar notícias:', error);
+        // Exemplo de mensagem de erro visível na página
+        const noticiasContainer = document.getElementById('noticias');
+        noticiasContainer.innerHTML = '<p>Ocorreu um erro ao carregar as notícias. Por favor, tente novamente mais tarde.</p>';
       }
     }
 
     document.addEventListener('DOMContentLoaded', fetchNoticias);
-  
   </script>
 </body>
 </html>
