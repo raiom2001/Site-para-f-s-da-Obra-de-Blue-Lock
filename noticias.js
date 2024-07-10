@@ -27,7 +27,3 @@ app.get('/noticias', async (req, res) => {
     res.status(500).send('Erro ao buscar notícias: ' + error.message);
   }
 });
-
-app.listen(process.env.PORT || 3000, () => {
-  console.log('Servidor ouvindo com sucesso!');
-});
