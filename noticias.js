@@ -10,7 +10,7 @@ app.use(cors());
 
 const rssUrl = 'https://news.google.com.br/rss/search?q=Blue+Lock';
 
-app.get('/noticias', async (req, res) => {
+app.get('/api/noticias', async (req, res) => {
   try {
     const feed = await parser.parseURL(rssUrl);
 
