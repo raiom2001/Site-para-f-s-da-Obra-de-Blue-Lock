@@ -28,6 +28,6 @@ app.get('/noticias', async (req, res) => {
   }
 });
 
-app.listen(() => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('Servidor ouvindo com sucesso!');
 });
