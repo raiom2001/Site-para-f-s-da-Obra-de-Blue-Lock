@@ -18,7 +18,8 @@ Instalação e Uso:
 Clone este repositório: git clone https://github.com/seu-usuario/nome-do-repositorio.git
 Abra o arquivo index.html no seu navegador para iniciar o site.
 
-Contribuição
+Contribuição:
+
 Contribua enviando informações ou sugestões.
 
 Autor
