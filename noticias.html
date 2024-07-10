@@ -29,35 +29,35 @@
   </footer>
 
   <script>
-    async function fetchNoticias() {
-      try {
-        const response = await fetch('/noticias'); // Rota ajustada para ser relativa
-        if (!response.ok) {
-          throw new Error('Erro na requisição: ' + response.statusText);
-        }
-        const noticias = await response.json();
-        const noticiasContainer = document.getElementById('noticias');
-        noticiasContainer.innerHTML = ''; // Limpa os resultados anteriores
-
-        noticias.forEach(noticia => {
-          const noticiaElement = document.createElement('div');
-          noticiaElement.classList.add('noticia'); // Classe CSS para estilização
-          noticiaElement.innerHTML = `
-            <h2>${noticia.title}</h2>
-            <p>${noticia.contentSnippet}</p>
-            <a href="${noticia.link}" target="_blank">Leia mais</a>
-          `;
-          noticiasContainer.appendChild(noticiaElement);
-        });
-      } catch (error) {
-        console.error('Erro ao buscar notícias:', error);
-        // Exemplo de mensagem de erro visível na página
-        const noticiasContainer = document.getElementById('noticias');
-        noticiasContainer.innerHTML = '<p>Ocorreu um erro ao carregar as notícias. Por favor, tente novamente mais tarde.</p>';
-      }
+   async function fetchNoticias() {
+  try {
+    const response = await fetch('/noticias'); // Rota relativa para o backend no Vercel
+    if (!response.ok) {
+      throw new Error('Erro na requisição: ' + response.statusText);
     }
+    const noticias = await response.json();
+    const noticiasContainer = document.getElementById('noticias');
+    noticiasContainer.innerHTML = ''; // Limpa os resultados anteriores
 
-    document.addEventListener('DOMContentLoaded', fetchNoticias);
+    noticias.forEach(noticia => {
+      const noticiaElement = document.createElement('div');
+      noticiaElement.classList.add('noticia'); // Classe CSS para estilização
+      noticiaElement.innerHTML = `
+        <h2>${noticia.title}</h2>
+        <p>${noticia.contentSnippet}</p>
+        <a href="${noticia.link}" target="_blank">Leia mais</a>
+      `;
+      noticiasContainer.appendChild(noticiaElement);
+    });
+  } catch (error) {
+    console.error('Erro ao buscar notícias:', error);
+    // Exemplo de mensagem de erro visível na página
+    const noticiasContainer = document.getElementById('noticias');
+    noticiasContainer.innerHTML = '<p>Ocorreu um erro ao carregar as notícias. Por favor, tente novamente mais tarde.</p>';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', fetchNoticias);
   </script>
 </body>
 </html>
