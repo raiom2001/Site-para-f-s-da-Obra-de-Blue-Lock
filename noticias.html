@@ -31,7 +31,7 @@
   <script>
    async function fetchNoticias() {
   try {
-    const response = await fetch('/noticias'); // Rota relativa para o backend no Vercel
+    const response = await fetch('/api/noticias'); // Atualize o ponto de extremidade
     if (!response.ok) {
       throw new Error('Erro na requisição: ' + response.statusText);
     }
