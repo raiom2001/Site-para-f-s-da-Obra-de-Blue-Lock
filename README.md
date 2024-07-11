@@ -4,6 +4,13 @@ Descrição:
 
 "Este projeto é um site dedicado aos fãs do mangá Blue Lock, oferecendo a leitura do mangá online, informações detalhadas sobre os personagens principais, notícias relacionadas e uma interface intuitiva para navegação."
 
+Ferramentas usadas:
+HTML;
+CSS;
+JavaScript;
+Node.Js
+Express.js
+
 Funcionalidades Principais:
 
 Leitura online do mangá Blue Lock.
@@ -24,3 +31,5 @@ Contribua enviando informações ou sugestões.
 
 Autor
 Guilherme Macena.
+
+Link do site para teste hospedado no vercel: https://organizadalock.vercel.app/noticias.html
