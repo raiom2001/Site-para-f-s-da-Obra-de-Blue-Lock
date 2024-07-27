@@ -1,0 +1,11 @@
+{
+  "name": "meu-projeto",
+  "version": "1.0.0",
+  "main": "noticias.js",
+  "scripts": {
+    "start": "node noticias.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1" // Inclua aqui qualquer outra dependência necessária
+  }
+}
