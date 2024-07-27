@@ -34,9 +34,9 @@
   </footer>
 
   <script>
-  async function fetchNoticias() {
+    async function fetchNoticias() {
       try {
-        const response = await fetch('http//localhost:4000/noticias');
+        const response = await fetch('http://localhost:4000/noticias');
         if (!response.ok) {
           throw new Error('Erro na requisição: ' + response.statusText);
         }
@@ -56,7 +56,6 @@
     }
 
     document.addEventListener('DOMContentLoaded', fetchNoticias);
-
   
   </script>
 </body>
