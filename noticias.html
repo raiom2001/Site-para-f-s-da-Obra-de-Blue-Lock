@@ -36,7 +36,7 @@
   <script>
     async function fetchNoticias() {
       try {
-        const response = await fetch('/noticias');
+        const response = await fetch('noticias');
         if (!response.ok) {
           throw new Error('Erro na requisição: ' + response.statusText);
         }
