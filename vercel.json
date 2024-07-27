@@ -4,6 +4,6 @@
     { "src": "noticias.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "noticias.js" }
+    { "src": "/noticias", "dest": "noticias.js" }
   ]
 }
