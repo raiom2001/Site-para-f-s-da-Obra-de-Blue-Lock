@@ -6,6 +6,6 @@
     "start": "node noticias.js"
   },
   "dependencies": {
-    "express": "^4.17.1" // Inclua aqui qualquer outra dependência necessária
+    "express": "^4.17.1" // Certifique-se de adicionar apenas dependências necessárias
   }
 }
