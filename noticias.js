@@ -3,6 +3,7 @@ const cors = require('cors');
 const Parser = require('rss-parser');
 
 const app = express();
+const port = 4000;
 const parser = new Parser();
 
 // Middleware para permitir CORS
@@ -28,8 +29,6 @@ app.get('/noticias', async (req, res) => {
   }
 });
 
-// Use a porta fornecida pelo ambiente ou 4000 para desenvolvimento local
-const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`Servidor ouvindo na porta ${port}`);
 });
