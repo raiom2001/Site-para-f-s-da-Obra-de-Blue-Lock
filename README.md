@@ -33,3 +33,4 @@ Autor
 Guilherme Macena.
 
 Link do site para teste hospedado no vercel: https://organizadalock.vercel.app/noticias.html
+Lembre de rodar o servidor em sua máquina e configurar para a porta que deseja.
