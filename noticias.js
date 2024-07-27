@@ -3,7 +3,7 @@ const cors = require('cors');
 const Parser = require('rss-parser');
 
 const app = express();
-
+const port = process.env.PORT || 4000;
 const parser = new Parser();
 
 // Middleware para permitir CORS
